@@ -1,0 +1,52 @@
+<%- include('partials/header.ejs') %>
+
+
+
+<div class="container">
+  <%- include('partials/homenavbar.ejs') %>
+
+  <hr>
+  <div class="jumbotron">
+    <h1 class="display-4">Bem-vindo</h1>
+    <p class="lead">Este é um simples blog criado com intuito de aprendizado.</p>
+    <hr class="my-4">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+      when an unknown printer took a galley of type and scrambled it to make a 
+      type specimen book. It has survived not only five centuries, but also the 
+      leap into electronic typesetting, remaining essentially unchanged. It was 
+      popularised in the 1960s with the release of Letraset sheets containing Lorem 
+      Ipsum passages, and more recently with desktop publishing software like Aldus 
+      PageMaker including versions of Lorem Ipsum.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+  </div>
+  <hr>
+
+  <% articles.forEach(article => { %>
+    <div class="card">
+      <div class="card-header">
+        <h2><%= article.title %></h2>
+      </div>
+
+      <div class="card-body">
+        <a href="/<%=article.slug%>" class="btn btn-success float-right">Ler  artigo</a>
+
+      </div>
+
+    </div>
+    <br>
+
+  <% }) %>  
+
+  <div class="row" style="display: inline;">
+    <div class="col col-12">
+      <a class="float-right"href="/articles/page/2">Próxima Página</a>
+    </div>
+  </div>
+  <hr>
+
+</div>
+  
+<%- include('partials/footer.ejs') %>
